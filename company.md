@@ -1,7 +1,7 @@
 ---
 layout: single
-permalink: /company/
 title: Company
+permalink: /company/
 ---
 
 

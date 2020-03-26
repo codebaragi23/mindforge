@@ -1,6 +1,7 @@
 ---
 layout: single
 title: Technology
+permalink: /technology/
 ---
 
 ## AI for Edge computing
