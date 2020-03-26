@@ -15,11 +15,14 @@
   </div>
   <ul class="main-nav">
     {%- for link in site.data.navigation.main -%}
-      {%- if link.url != null -%}
-        <li class="mx-4">
-          <a  class="nav-links" href="{{ site.url }}{{ site.baseurl }}{{ link.url }}">{{ link.title }}</a>
-        </li>
+      {%- if link.url contains '://' -%}
+        {%- assign url = link.url -%}
+      {%- else -%}
+        {%- assign url = link.url | relative_url -%}
       {%- endif -%}
+      <li class="mx-4">
+        <a  class="nav-links" href="{{ url }}">{{ link.title }}</a>
+      </li>
     {% endfor %}
   </ul>
 </nav>
