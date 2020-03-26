@@ -1,0 +1,19 @@
+#This file defines all the categories you 
+
+
+automotive:
+  name: Automotive
+  description: 카메라 기반 자율주행 센서
+edge-computing:
+  name: AI for Edge computing
+  description: AI 카메라, AI Embedded system
+mapping:
+  name: Mapping
+  description: Semantic Segmentation, Registration
+medical-imaging:
+  name: 의료영상
+  description: 수술 네비게이션  SW
+ai-device:
+  name: 자영업자용 AI 기기
+  description: AI coffee bean Picker
+

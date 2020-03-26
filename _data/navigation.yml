@@ -1,0 +1,16 @@
+# Navivation
+main:
+  - title: HOME
+    url: /
+  - title: TECHNOLOGY
+    url: /technology/
+  - title: PRODUCTS
+    url: /products/
+  - title: APPLICATIONS
+    url: /applications/
+  - title: RESOURCES
+    url: /resources/
+  - title: COMPANY
+    url: /company/
+  - title: NEWS&EVENTS
+    url: /news-events
