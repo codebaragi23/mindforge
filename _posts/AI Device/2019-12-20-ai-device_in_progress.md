@@ -2,7 +2,7 @@
 layout: post
 title: 현재 개발중인 기술
 category: ai-device
-author: mac
+#author: mac
 short-description: 개발 중 기술
 ---
 
