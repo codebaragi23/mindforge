@@ -21,7 +21,7 @@
 title: Mind Forge - Custom AI
 description: Mind Forge 웹사이트 입니다.
 baseurl: # the subpath of your site, e.g. /support
-url: http://mindforge.co.kr/ # the base hostname AND PROTOCOL for your site, e.g. http://example.com
+url: http://www.mindforge.co.kr/ # the base hostname AND PROTOCOL for your site, e.g. http://example.com
 permalink: /:categories/:title
 
 content_type: Custom AI #Define whether this is a knowledge base, help center, or something else
