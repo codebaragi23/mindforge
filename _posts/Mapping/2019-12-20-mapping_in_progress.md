@@ -11,6 +11,6 @@ short-description: 개발 중 기술
 
 - 시립대 GIS 학과와 협력관계
 
-![](/assets/class.png)
+![나타낼 수 없음](/assets/images/class.png)
 
-![](/assets/mapping.png)
+![나타낼 수 없음](/assets/images/mapping.png)

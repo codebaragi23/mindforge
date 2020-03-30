@@ -20,6 +20,20 @@ body {
   text-rendering: optimizeLegibility;
 }
 
+.row {
+  margin-top: 40px;
+  padding: 60px;
+  &:nth-child(4n + 1) {
+    clear: both;
+    background: $dark-color;
+  }
+
+  &:nth-child(4n + 2) {
+    clear: both;
+    background:$highlight-color;
+  }
+}
+
 a {
   color: $link-color;
   outline: none;

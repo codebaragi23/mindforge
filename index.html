@@ -3,34 +3,97 @@ layout: default
 title: Home
 ---
 
-  {% include header-home.html %}
-    <div class="container-full">
-      <div class="container grid-xl">
-        <div class="columns negative-m-s">
-          <div class="column col-12 text-center">
-            <h6 class="text-secondary">Select a Category</h6>
-          </div>
-          {% for category in site.categories %}
-          {% capture category_name %}{{ category | first }}{% endcapture %}
-          {% assign page_category = site.data.category_list[category_name] %}
+<div class="header-bg">
+  <div class="container-full">
+    <div class="header ">
+      {% include nav.html %}
+    </div>
+  </div>
+</div>
+
+<div class="container-full">
+  <div class="row">
+    <div class="container grid-xl">
+      <div class="columns">
+        <div class="column col-11 col-mx-auto text-center">
+          <h1 class="text-light text-bold mt-2 super-h1">Our Applications</h1>
+        </div>
+        {% for category_iter in site.data.category_list %}
+          {% capture category_id %}{{ category_iter[0] }}{% endcapture %}
+          {% assign category = category_iter[1] %}
+          
+          {% if category.children != null  %}
+            {% assign num_articles = 0 %}
+            {% for child_iter in category.children %}
+              {% capture child_category_name %}{{ child_iter[0] }}{% endcapture %}
+              {% assign child_post_category = site.categories[child_category_name] %}
+              {% assign num_child_articles = child_post_category | size %}
+              {% assign num_articles = num_articles | plus : num_child_articles %}
+            {% endfor %}
+          {% else %}
+            {% assign post_category = site.categories[category_id] %}
+            {% assign num_articles = post_category | size %}
+          {% endif %}
           <div class="column col-4 col-md-6 col-sm-12">
-            <a href="{{ site.baseurl }}/{{ category_name | slugify }}">
+            <a href="{{ site.baseurl }}/{{ category_id | slugify }}">
               <div class="card card-link">
                 <div class="card-body text-center my-4">
-                  <h5 class="text-bold">{{ page_category.name }}</h5>
-                      
-                  {% if category[1].size == 1 %}
-                  <p class="m-0">{{ category | last | size }} article</p>
+                  <h5 class="text-bold">{{ category.name }}</h5>
+                  {% if category.size == 1 %}
+                  <p class="m-0">{{ num_articles }} article</p>
                   {% else %}
-                  <p class="m-0">{{ category | last | size }} articles</p>
+                  <p class="m-0">{{ num_articles }} articles</p>
                   {% endif %}
                 </div>
               </div>
             </a>
           </div>
-          {% endfor %} 
+        {% endfor %} 
+      </div>
+    </div>
+  </div>
 
-          {% include more-help.html %}
+  <div class="row">
+    <div class="container grid-xl">
+      <div class="columns">
+        <div class="column col-11 col-mx-auto text-center">
+          <h1 class="text-light text-bold mt-2 super-h1">Technology</h1>
+        </div>
+        <div class="column col-12">
+          <div class="card">
+            <div class="card-body">
+            <h2 id="ai-for-edge-computing">AI for Edge computing</h2>
+  
+  <ul>
+    <li>8bit  weight 최적화 기술</li>
+    <li>DSP, CUDA 최적화</li>
+    <li>CNN 네트워크 최적화</li>
+    <li>다양한 embedded 칩셋 개발 경험</li>
+  </ul>
+  
+  <h2 id="camera--lg-gg7-양산-경험">CAMERA ( LG G~G7 양산 경험)</h2>
+  <ul>
+    <li>HDR 알고리즘   (IP화 완료 테스트칩 개발 완료)</li>
+    <li>PD AF 알고리즘 (G6~G8 탑재, IP화 완료 테스트칩 개발 완료)</li>
+    <li>보케 알고리즘 개발( G3,G4용으로 개발했으나 미탑재)</li>
+    <li>ISP  알고리즘 (3A, 멀티프레임 NR, 멀티카메라 image merge)</li>
+    <li>Image registration, Segmentation</li>
+  </ul>
+  
+  <h2 id="automotive">Automotive</h2>
+  <ul>
+    <li>Surround view monitoring system 전체 알고리즘 개발 (현대차 GV80, RG3 탑재)</li>
+    <li>AOD 개발</li>
+    <li>카메라 기반 BLIS 개발</li>
+    <li>보행자 인식 알고리즘 개발</li>
+    <li>딥러닝기반 주차칸 인식 시스템 (  현대차 GV80, RG3 탑재)</li>
+    <li>Nvidia drive cx 보드에 내장.</li>
+  </ul>
+  
+            </div>
+          </div>
         </div>
       </div>
     </div>
+  </div>
+</div>

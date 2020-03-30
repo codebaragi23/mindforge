@@ -22,13 +22,18 @@
     }
   }
   p {
+    display: inline-block;
     color: $gray-color;
     font-size: 0.8em;
     margin: 15px 0;
+    
+    &:not(:first-child) {
+      margin: 0;
+    }
   }
   a {
     color: $white;
-    display: block;
+    display: inline-block;
     &:hover {
       color: $highlight-color;
       cursor: pointer;
