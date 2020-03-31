@@ -17,5 +17,3 @@ permalink: /resources/
 - 포기 : 10개
 - Pending :  15개
 - 출원 : 2개
-
-![나타낼 수 없음](/assets/images/patents.png)
