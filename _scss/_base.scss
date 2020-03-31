@@ -22,7 +22,7 @@ body {
 
 .row {
   margin-top: 40px;
-  padding: 60px;
+  padding: 20px;
   &:nth-child(4n + 1) {
     clear: both;
     background: $dark-color;
@@ -49,4 +49,28 @@ a {
     color: $link-color-dark;
     text-decoration: none;
   }
+}
+
+.nowrap {
+  white-space: nowrap;
+}
+
+html {
+  /* apply a natural box layout model to all elements */
+  font-size: 16px;
+
+  @media(min-width: 768px) {
+    font-size: 18px;
+  }
+
+  @media (min-width: 1024px) {
+    font-size: 20px;
+  }
+
+  @media (min-width: 1280px) {
+    font-size: 22px;
+  }
+
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
 }
