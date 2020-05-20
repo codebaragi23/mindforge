@@ -2,44 +2,34 @@
 <section class="container-full footer">
   <svg id="anglesvg" viewBox="0 0 1440 60" xmlns="http://www.w3.org/2000/svg"><path d="M720 60l720-60H0z" fill="#f5f6ff" /></svg>
   <div class="container grid-xl footer-contents mb-0">
-    <div class="columns text-center">
-      <div class="column col-12">
-        <img style="max-width: 10%; min-width: 150px; opacity: 0.7;" src="{{ site.baseurl }}/assets/images/{{ site.brand_logo }}"/>
-        <div class="footer-social my-4">
-            {% if site.twitter_username == null %}
-            {% else %}
-            <a href="https://www.twitter.com/{{ site.twitter_username }}" target="_blank"><i class='uil uil-twitter'></i></a>
-            {% endif %}
-
-            {% if site.github_username == null %}
-            {% else %}
-            <a href="https://github.com/{{ site.github_username }}" target="_blank"><i class='uil uil-github'></i></a>
-            {% endif %}
-
-            {% if site.linkedin_page == null %}
-            {% else %}
-            <a href="{{ site.linkedin_page}}"><i class='uil uil-linkedin' target="_blank"></i></a>
-            {% endif %}
-
-            {% if site.facebook_page == null %}
-            {% else %}
-            <a href="{{ site.facebook_page}}"><i class='uil uil-facebook' target="_blank"></i></a>
-            {% endif %}
-
-            {% if site.email == null %}
-            {% else %}
-            <a href="mailto:{{ site.email }}"><i class='uil uil-envelope' target="_blank"></i></a>
-            {% endif %}
-
-            {% if site.instagram_username == null %}
-            {% else %}
-            <a href="http://instagram.com/{{site.instagram_username}}" target="_blank"><i class='uil uil-instagram'></i></a>
-            {% endif %}
-          </div>
-        <p>© 20{{ site.time | date: '%y' }} All rights reserved.</p><br>
-        <p>Designed by</p> <a class="text-small" href="https://github.com/codebaragi23" target="_blank">Codebaragi23</a>
+    <div class="columns">
+      <div class="column col-xs-12 col-sm-4">
+        <img style="max-width: 70%; opacity: 0.7;" src="{{ site.baseurl }}/assets/images/{{ site.comp_logo-wide }}"/>
+      </div>
+      <div class="column col-xs-12 col-sm-3">
+        {% if site.address %}
+          <h4>Address</h4>
+          <p>{{ site.address }}</p>
+        {% endif %}
+      </div>
+      <div class="column col-xs-12 col-sm-3">
+        {% if site.contact %}
+          <h4>Contact</h4>
+          {% if site.contact.tel %}
+            <p>{{ site.contact.tel }}</p><br>
+          {% endif %}
+          {% if site.contact.tel %}
+            <a href="mailto:{{ site.contact.mailto }}">{{ site.contact.mailto }}</a><br>
+          {% endif %}
+        {% endif %}
       </div>
     </div>
+    <section id="copyright">
+      <div class="rows">
+        <p>© 20{{ site.time | date: '%y' }} All rights reserved.</p>
+        <p>Designed by</p> <a class="text-small" href="https://github.com/codebaragi23" target="_blank">Codebaragi23</a>
+      </div>
+    </section>
   </div>
 </section>
 

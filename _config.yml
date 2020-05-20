@@ -24,11 +24,19 @@ baseurl: #/mindforge # the subpath of your site, e.g. /support
 url: http://mindforge.kr #https://codebaragi23.github.io # the base hostname AND PROTOCOL for your site, e.g. http://example.com
 permalink: /:categories/:title
 
-content_type: Custom AI #Define whether this is a knowledge base, help center, or something else
+content_type: #Define whether this is a knowledge base, help center, or something else
 use_authors: #true #Set this to false to disable showing post authors
 
-brand_logo: logo.png
-brand_name: Mind Forge
+comp_logo-wide: logo-wide.png
+comp_logo-long: logo-long.png
+comp_name: Mind Forge
+
+contact:
+  tel: +82-070-4082-2082
+  mailto: ai@mindforge.kr
+
+address : 서울특별시 구로구 디지털로 33길 48
+          대륭포스트타워 7차 504호
 
 # # Social Links
 # twitter_username: TheTeaGuns

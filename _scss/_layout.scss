@@ -84,6 +84,13 @@
   }
 }*/
 
+.footer {
+  .column {
+    padding-left: $layout-spacing-lg;
+    padding-right: $layout-spacing-lg;
+  }
+}
+
 .column {
   padding-left: $layout-spacing;
   padding-right: $layout-spacing;
@@ -399,6 +406,9 @@
   .col-sm-auto {
     width: auto;
   }
+}
+
+@media screen and (max-width: 768px) {
   .hide-sm {
     display: none !important;
   }
@@ -406,6 +416,7 @@
     display: block !important;
   }
 }
+
 @media (max-width: $size-xs) {
   .col-xs-12,
   .col-xs-11,

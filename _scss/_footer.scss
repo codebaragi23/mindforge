@@ -1,6 +1,6 @@
 .footer {
   background: $dark-color;
-  padding: 0 0 100px;
+  padding-bottom: 35px;
   .footer-contents {
     padding-top: 80px;
     .footer-social {
@@ -10,7 +10,13 @@
       }
     }
   }
-  h5 {
+
+  #copyright {
+    padding-top: 55px;
+  }
+
+  h4, h5 {
+    font-size: 15px;
     color: $white;
     a {
       margin: 0;
@@ -24,7 +30,7 @@
   p {
     display: inline-block;
     color: $gray-color;
-    font-size: 0.8em;
+    font-size: 12px;
     margin: 15px 0;
     
     &:not(:first-child) {

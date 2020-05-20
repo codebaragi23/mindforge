@@ -1,0 +1,11 @@
+{% capture video_id %}{{ include.id }}{% endcapture %}
+{% capture video_provider %}{{ include.provider }}{% endcapture %}
+
+<!-- Courtesy of embedresponsively.com //-->
+<div class="responsive-video-container">
+{% if video_provider == "youtube" %}
+  <iframe width="560" height="420" src="https://www.youtube-nocookie.com/embed/{{ video_id }}?color=white&theme=light\" frameborder="0" allowfullscreen></iframe>
+{% elsif video_provider == "google-drive" %}
+  <iframe  width="560" height="420" src="https://drive.google.com/file/d/{{ video_id }}/preview" frameborder="0" allowfullscreen></iframe>
+{% endif %}
+</div>
