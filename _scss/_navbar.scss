@@ -75,20 +75,20 @@
   align-items: center;
   border: 0;
   h4 {
-        margin: 0;
-        margin-left: 14px;
-        color: $white;
-        font-weight: 700;
+      margin: 0;
+      margin-left: 14px;
+      color: $white;
+      font-weight: 700;
   }
   &:hover {
         border: 0;
   }
   p {
-        font-size: 10px;
-        background: $gray-color;
-        padding: 2px 8px;
-        border-radius: 5px;
-        margin-left: 5px;
+      font-size: 10px;
+      background: $gray-color;
+      padding: 2px 8px;
+      border-radius: 5px;
+      margin-left: 5px;
   }
 }
 
