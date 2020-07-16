@@ -6,10 +6,8 @@ layout: default
   {% capture overlay_filter %}rgba(0, 0, 0, {{ page.header.overlay_filter }}){% endcapture %}
 {% endif %}
 
-{% if page.header.overlay_image contains "://" %}
+{% if page.header.overlay_image %}
   {% capture overlay_img_path %}{{ page.header.overlay_image }}{% endcapture %}
-{% elsif page.header.overlay_image %}
-  {% capture overlay_img_path %}{{ page.header.overlay_image | relative_url }}{% endcapture %}
 {% endif %}
 
 <section class="hero diagonal {% if page.header.overlay_image %}overlay{% endif %}"

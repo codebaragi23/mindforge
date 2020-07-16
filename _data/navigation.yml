@@ -4,7 +4,7 @@ links:
 - name: Home
   link: /
 - name: 얼굴인식
-  link: /face-detection/
+  link: /face-recognition/
 - name: 객체검출
   link: /object-detection/
 - name: 포즈검출
