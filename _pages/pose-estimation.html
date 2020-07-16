@@ -1,0 +1,30 @@
+---
+layout: page
+title: 포즈검출
+permalink: /pose-estimation/
+---
+
+<section class="diagonal alternate">
+	<div class="container">
+    <h4>
+      마인드포지의 AI 포즈검출 솔루션은 저가격, 저전력, 높은 인식 속도, 높은 인식 성능으로  에지 디바이스에 최적화되어 있습니다. (Edge device에 적용 중)
+    </h4>
+    <ul class="image-list">
+      <li><img src="{{ site.baseurl }}/assets/images/pose-estimation-on-edge-device.png"></li>
+    </ul>
+  </div>
+</section>
+{% for demo in site.data.demo.links %}
+  {% if demo.name == page.title %}
+    {% assign demo_id = demo.id %}
+  {% endif %}
+{% endfor %}
+
+{% if demo_id %}
+  <section class="diagonal alternate">
+    <div class="container">
+      <h4>Demo video</h4>
+      {% include video.html id=demo_id provider="youtube" %}
+    </div>
+  </section>
+{% endif %}

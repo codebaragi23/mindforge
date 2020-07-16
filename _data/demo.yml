@@ -1,0 +1,9 @@
+links:
+  - name: 얼굴인식
+    id: wV6DWCTDnm4
+  - name: 객체검출
+    id: rIMqDebETJo
+  - name: 포즈검출
+    id: QK24cNX7j3o
+  - name: 세그멘테이션
+    id: _qy9hoNyUeE

@@ -1,22 +1,23 @@
----
-common-js:
-  - "/assets/js/jquery-1.11.2.min.js"
-  - "/assets/js/bootstrap.min.js"
-  - "/assets/js/main.js"
----
+<!doctype html>
 
-
-<!DOCTYPE html>
 <html lang="en">
-
   {% include head.html %}
-
   <body>
+		<header>
+			<div class="container">
+				<h1 class="company-name"><a href="{{site.url }}{{ site.baseurl }}/"><img src="{{site.url }}{{ site.baseurl }}/assets/images/{{ site.comp_logo-wide }}" alt="Mindforge" width="250"></a></h1>
+				{% include navigation.html %}
+			</div>
+		</header>
+    
     {{ content }}
 
     {% include footer.html %}
-    <script async defer src="https://cdn.simpleanalytics.io/hello.js"></script>
-    <noscript><img src="https://api.simpleanalytics.io/hello.gif" alt=""></noscript>
-    
-  </body>
+		<script>
+			document.getElementById("open-nav").onclick = function () {
+				document.body.classList.toggle("nav-open");
+				return false;
+			};
+		</script>
+	</body>
 </html>

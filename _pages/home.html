@@ -1,0 +1,92 @@
+---
+layout: default
+title: (주)마인드포지
+permalink: /
+---
+
+<section class="hero diagonal">
+	<div class="container">
+		<h2 class="editable">AI 바우처 공급기업</h2>
+		<p class="subtext editable">AI 활용ㆍ확산 촉진을 위하여 AI솔루션 수요기업에게 바우처를 발급하고, 수요기업은 바우처를 활용하여 공급기업의 원하는 AI솔루션을 활용할 수 있는 정부지원 사업입니다</p>
+		<a class="button alt" href="http://www.bizinfo.go.kr/see/seea/selectSEEA140Detail.do?menuId=80001001001&pblancId=PBLN_000000000051348">AI 바우처 지원사업</a>
+	</div>
+</section>
+
+<section class="diagonal alternate">
+	<div class="container halves">
+		<div>
+			<ul class="image-list">
+				<li><img src="{{ site.baseurl }}/assets/images/pose-estimation.png" width="200"></li>
+			</ul>
+		</div>
+		<div>
+			<h3 class="editable">포즈검출</h3>
+			<p class="editable">
+        마인드포지의 AI 포즈검출 솔루션은 저가격, 저전력, 높은 인식 속도, 높은 인식 성능으로  에지 디바이스에 최적화되어 있습니다. (Edge device에 적용 중)
+      </p>
+      <a class="button alt" href="/pose-estimation/">더 자세히 보기</a>
+    </div>
+	</div>
+</section>
+
+<section class="diagonal alternate overlay" style="background-image: url(https://miro.medium.com/max/4242/1*fpDngO6lM5pDeIPOOezK1g.jpeg); background-size: cover; background-position: center;">
+	<div class="container">
+		<!-- <div>
+			<ul class="image-list">
+				<li><img src="{{ site.baseurl }}/assets/images/face-recognition-on-edge-device.png" width="400"></li>
+			</ul>
+		</div> -->
+		<div>
+			<h3 class="editable" style="color:white;">얼굴인식</h3>
+			<p class="editable" style="color:ghostwhite;">
+        마인드포지의 AI 얼굴인식 솔루션은 <br> 저가격, 저전력, 높은 인식 속도, 높은 인식 성능으로 에지 디바이스에 최적화되어 있습니다.
+      </p>
+      <a class="button alt" href="/face-detection/">더 자세히 보기</a>
+		</div>
+	</div>
+</section>
+
+<section class="diagonal alternate">
+	<div class="container halves">
+    <div>
+			<ul class="image-list">
+				<li><img src="{{ site.baseurl }}/assets/images/semantic-segmentation.png" width="400"></li>
+			</ul>
+		</div>
+    <div>
+			<h3 class="editable">세그멘테이션</h3>
+			<p class="editable">
+        마인드포지의 AI 세그멘테이션 솔루션은 위성 영상에 적용되어 토지를 분류합니다. 
+      </p>
+      <a class="button alt" href="/segmentaion/">더 자세히 보기</a>
+		</div>
+	</div>
+</section>
+
+<section class="diagonal alternate overlay" style="background-image: url({{ site.baseurl }}/assets/images/object-detection-parking-lot.png); background-size: cover; background-position: center;">
+	<div class="container">
+    <div>
+      <h3 class="editable" style="color:white;">객체검출</h3>
+			<p class="editable" style="color:ghostwhite;">
+        마인드포지의 AI 객체검출 솔루션은 주차장의 점유공간을 카메라로 인식하여 주차위치안내시스템에 적용되었습니다.
+      </p>
+      <a class="button alt" href="/object-detection/">더 자세히 보기</a>
+		</div>
+	</div>
+</section>
+
+<section class="diagonal alternate">
+	<div class="container halves">
+		<div>
+			<h3 class="editable">데모 영상</h3>
+			<p class="editable">마인드포지의 AI 솔루션 데모 영상을 살펴보세요.</p>
+		</div>
+		<div>
+			<ul class="image-grid">
+				{% for demo in site.data.demo.links limit: 4 %}
+					<li><a href="https://youtu.be/{{ demo.id }}"><img src="http://img.youtube.com/vi/{{ demo.id }}/0.jpg"></a></li>
+				{% endfor %}
+			</ul>
+		</div>
+	</div>
+</section>

@@ -1,49 +1,51 @@
-
-<section class="container-full footer">
-  <svg id="anglesvg" viewBox="0 0 1440 60" xmlns="http://www.w3.org/2000/svg"><path d="M720 60l720-60H0z" fill="#f5f6ff" /></svg>
+<footer class="diagonal">
   <div class="container grid-xl footer-contents mb-0">
-    <div class="columns">
-      <div class="column col-xs-12 col-sm-4">
-        <img style="max-width: 70%; opacity: 0.7;" src="{{ site.baseurl }}/assets/images/{{ site.comp_logo-wide }}"/>
+    <p class="editor-link"><a href="cloudcannon:collections/_data/footer.yml" class="btn"><strong>&#9998;</strong> Update Footer Sections</a></p>
+
+    <div class="footer-rows">
+      <div class="social">
+        {% for link in site.data.social.links %}
+          <li>
+            <a {% if link.new_window %}target="_blank"{% endif %} href="{% include relative-src.html src=link.link %}" {% if link.social_icon %}class="{{ link.social_icon | slugify }}-icon"{% endif %}>
+              {% if link.social_icon %}
+                {% include social-icon.html icon=link.social_icon %}
+              {% endif %}
+            </a>
+          </li>
+        {% endfor %}
       </div>
-      <div class="column col-xs-12 col-sm-3">
-        {% if site.address %}
-          <h4>Address</h4>
-          <p>{{ site.address }}</p>
-        {% endif %}
+
+      <div class="row">
+        <div class="col-xs-12 col-md-8">
+          {% if site.data.company.address %}
+            <h4>Address</h4>
+            <p>{{ site.data.company.address }}</p>
+          {% endif %}
+        </div>
+        <div class="col-xs-12 col-md-4">
+          {% if site.data.company.contact %}
+            <h4>Contact</h4>
+            {% if site.data.company.contact.tel %}
+              <p>{{ site.data.company.contact.tel }}</p><br>
+            {% endif %}
+            {% if site.data.company.contact.mailto %}
+              <a href="mailto:{{ site.data.company.contact.mailto }}">{{ site.data.company.contact.mailto }}</a><br>
+            {% endif %}
+          {% endif %}
+        </div>
       </div>
-      <div class="column col-xs-12 col-sm-3">
-        {% if site.contact %}
-          <h4>Contact</h4>
-          {% if site.contact.tel %}
-            <p>{{ site.contact.tel }}</p><br>
-          {% endif %}
-          {% if site.contact.tel %}
-            <a href="mailto:{{ site.contact.mailto }}">{{ site.contact.mailto }}</a><br>
-          {% endif %}
-        {% endif %}
+
+      <div class="company">
+        <p>{{ site.data.company.title }} | {{ site.data.company.description }}</p>
+      </div>
+
+      <div class="copyright">
+        <div class="row">
+          <p>© 20{{ site.time | date: '%y' }} All rights reserved. Designed by 
+            <a class="text-small" href="https://github.com/codebaragi23" target="_blank">Codebaragi23</a>
+          </p>
+        </div>
       </div>
     </div>
-    <section id="copyright">
-      <div class="rows">
-        <p>© 20{{ site.time | date: '%y' }} All rights reserved.</p>
-        <p>Designed by</p> <a class="text-small" href="https://github.com/codebaragi23" target="_blank">Codebaragi23</a>
-      </div>
-    </section>
   </div>
-</section>
-
-{% if layout.common-js %}
-  {% for js in layout.common-js %}
-    <!-- doing something a bit funky here because I want to be careful not to include JQuery twice! -->
-    {% if js contains 'jquery' %}
-      <script>
-      	if (typeof jQuery == 'undefined') {
-          document.write('<script src="{{ js | relative_url }}"></scr' + 'ipt>');
-      	}
-      </script>
-    {% else %}
-      <script src="{{ js | relative_url }}"></script>
-    {% endif %}
-  {% endfor %}
-{% endif %}
+</footer>

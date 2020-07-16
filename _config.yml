@@ -1,97 +1,98 @@
-# Welcome to Jekyll!
-#
-# This config file is meant for settings that affect your whole blog, values
-# which you are expected to set up once and rarely edit after that. If you find
-# yourself editing this file very often, consider using Jekyll's data files
-# feature for the data you need to update frequently.
-#
-# For technical reasons, this file is *NOT* reloaded automatically when you use
-# 'bundle exec jekyll serve'. If you change this file, please restart the server process.
-#
-# If you need help with YAML syntax, here are some quick references for you: 
-# https://learn-the-web.algonquindesign.ca/topics/markdown-yaml-cheat-sheet/#yaml
-# https://learnxinyminutes.com/docs/yaml/
-#
-# Site settings
-# These are used to personalize your new site. If you look in the HTML files,
-# you will see them accessed via {{ site.title }}, {{ site.email }}, and so on.
-# You can create any custom variable you would like, and they will be accessible
-# in the templates via {{ site.myvariable }}.
+title: Mind Forge
 
-title: Mind Forge - Custom AI
+baseurl: 
+url: http://mindforge.kr
+
+google_analytics_key:
+google_maps_javascript_api_key:
+disqus_shortname:
+
+# Default description in social shares for the jekyll-seo-tag gem
 description: Mind Forge 웹사이트 입니다.
-baseurl: #/mindforge # the subpath of your site, e.g. /support
-url: http://mindforge.kr #https://codebaragi23.github.io # the base hostname AND PROTOCOL for your site, e.g. http://example.com
-permalink: /:categories/:title
-
-content_type: #Define whether this is a knowledge base, help center, or something else
-use_authors: #true #Set this to false to disable showing post authors
-
+comp_name: Mind Forge
 comp_logo-wide: logo-wide.png
 comp_logo-long: logo-long.png
-comp_name: Mind Forge
 
-contact:
-  tel: +82-070-4082-2082
-  mailto: ai@mindforge.kr
+# Author details for the jekyll-seo-tag gem
+author:
+  name:
+  email:
+  twitter: # twitter username without the @ symbol
 
-address : 서울특별시 구로구 디지털로 33길 48
-          대륭포스트타워 7차 504호
+# Social details for the jekyll-seo-tag gem
+# social:
+#   name: Urban Template
+#   links:
+#     - https://github.com/CloudCannon/urban-jekyll-template
 
-# # Social Links
-# twitter_username: TheTeaGuns
-# facebook_page:
-# github_username: TeaGuns
-# email: m@credd.in
-# linkedin_page:
-# instagram_username: 
+timezone: Asia/Seoul # https://en.wikipedia.org/wiki/List_of_tz_database_time_zones
 
+collections:
+  #staff_members:
+    #output: false
+  clients:
+    output: true
 
-# # More Help
-# help_one_title: Odin Bugs
-# help_one_content: If you find any bugs or problems with this theme, please open an issue over on Github.
-# help_one_button: Github
-# help_one_link: https://github.com/TeaGuns/odin/issues
+paginate: 10
+paginate_path: "/blog/:num/"
+permalink: pretty
 
-# help_two_title: Twitter
-# help_two_content: Feel free to tweet at me if you have suggestions for Odin. Or if you just want to say hi.
-# help_two_button: Twitter
-# help_two_link: https://twitter.com/theteaguns
+jekyll-archives:
+  enabled:
+    - "categories"
 
-# Defaults
-defaults:
-  # _pages
-  - scope:
-      path: ""
-      type: pages
-    values:
-      layout: single
-      author_profile: true
-      write_date: false
-      read_time: false
-      comments: false
-      share: true
-      related:
-
-# Build settings
-theme: minima
 plugins:
-  - jekyll-feed
-  - jekyll-last-modified-at
+  - "jekyll-feed"
+  - "jekyll-seo-tag"
+  - "jekyll-paginate"
+  - "jekyll-archives"
 
-# Exclude from processing.
-# The following items will not be processed, by default.
-# Any item listed under the `exclude:` key here will be automatically added to
-# the internal "default list".
-#
-# Excluded items can be processed by explicitly listing the directories or
-# their entries' file path in the `include:` list.
-#
-
-
-sass:
-  sass_dir:          _scss
-  style:            :compressed
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - README.md
+  - LICENCE
 
 include: 
   - _pages
+
+defaults:
+  - scope:
+      path: ""
+      type: "posts"
+    values:
+      layout: "post"
+      _options:
+        content:
+          width: 960
+          height: 2000
+  - scope:
+      path: ""
+      type: "staff_members"
+    values:
+      _options:
+        image_path:
+          width: 600
+          height: 600
+  - scope:
+      path: ""
+      type: "pages"
+    values:
+      layout: "page"
+  - scope:
+      path: "index.html"
+      type: "pages"
+    values:
+      layout: "default"
+
+# -----------
+# CloudCannon
+social_icons:
+  - Facebook
+  - Instagram
+  - LinkedIn
+  - Pinterest
+  - Tumblr
+  - Twitter
+  - YouTube
+  - RSS

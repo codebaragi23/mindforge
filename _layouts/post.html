@@ -1,61 +1,66 @@
 ---
-layout: default
+layout: page
 ---
 
-{% include header.html %}
+<section class="diagonal">
+	<div class="blog-post text-container">
+		{% include post-title.html post=page %}
+		<div class="post-content">
+			{{ content }}
+		</div>
+	</div>
+</section>
 
-{% assign page_category = site.data.category_list[page.category] %}
-<div class="container-full">
-    <div class="container grid-xl">
-      <div class="mt-12 show-md"></div>
-      <div class="mt-8"></div>
-      <div class="columns negative-m-xl">
-        <div class="column col-12">
-          <ul class="breadcrumb">
-            <li class="breadcrumb-item">
-              <a href="{{ site.url }}{{ site.baseurl }}">Home</a>
-            </li>
-            <li class="breadcrumb-item">
-              <a href="../{{ page.category }}">{{ page_category.name }}</a>
-            </li>
-            <li class="breadcrumb-item">
-              <a href="#">{{ page.title }}</a>
-            </li>
-          </ul>
-          <h2 class="text-light text-bold">{{ page.title }}</h2>
-          <p class="text-light mb-0">{{ page.short-description }}</p>
-        </div>
-        <div class="column col-12">
-          <div class="card">
-            <div class="card-body">
-              {% if site.use_authors == true %}
-                {% assign post_author = site.data.authors[page.author] %}
-                <div class="flex-vertical-center mb-4">
-                  <figure class="avatar d-inline-block" style="align-items: center;">
-                    <img  src="../assets/images/{{ post_author.image }}" alt="...">
-                  </figure>
-                  <div class="ml-2">
-                    <p class="text-dark text-small mb-0">Written by <span class="text-primary">{{ post_author.name }}</span></p>
-                    <p class="text-dark text-small text-italic mb-0">{% include reading-time.html %}</p>
-                  </div>
-                </div>
-                <hr>
-              {% else %}
-                <div class="ml-2">
-                  <p class="text-dark text-small text-italic mb-0">{{ page.last_modified_at | date: '%B %d, %Y'  }}</p>
-                </div>
-              {% endif %}
+{% if page.author_staff_member %}
+	<section class="diagonal patterned">
+		<div class="container">
+			<h2>Author</h2>
+			<ul class="image-grid">
+				{% assign author_id = page.author_staff_member | prepend: "/staff_members/" | append: "/" %}
+				{% assign author = site.staff_members | where: "url", author_id | first %}
 
-              {{ content }}
+				<li>{% include staff-member.html member=author %}</li>
+			</ul>
+		</div>
+	</section>
+{% endif %}
 
-              
-            
+<section class="diagonal alternate">
+	<div class="text-container">
+		<h2>Next post</h2>
+		<div class="blog-post">
+			{% if page.next %}
+				{% include post-summary.html post=page.next %}
+			{% elsif page.previous %}
+				{% include post-summary.html post=page.previous %}
+			{% endif %}
+		</div>
+	</div>
+</section>
 
-
-            </div>
-          </div>
-        </div>
-        {% include more-help.html %}
-      </div>
-    </div>
-  </div>
+{% if site.disqus_shortname and page.show_comments %}
+	<section class="diagonal">
+		<div class="container">
+			<h2>Comments</h2>
+			<div id="disqus_thread"></div>
+			<script>
+				/**
+				*  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+				*  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
+				/*
+				var disqus_config = function () {
+				this.page.url = PAGE_URL;  // Replace PAGE_URL with your page's canonical URL variable
+				this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+				};
+				*/
+				(function() { // DON'T EDIT BELOW THIS LINE
+				var d = document, s = d.createElement('script');
+				s.src = '//{{ site.disqus_shortname }}.disqus.com/embed.js';
+				s.setAttribute('data-timestamp', +new Date());
+				(d.head || d.body).appendChild(s);
+				})();
+			</script>
+			<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+		</div>
+	</section>
+{% endif %}

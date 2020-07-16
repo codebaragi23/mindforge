@@ -1,0 +1,70 @@
+---
+layout: page
+title: 얼굴인식
+permalink: /face-detection/
+
+header:
+  overlay_image: https://miro.medium.com/max/4242/1*fpDngO6lM5pDeIPOOezK1g.jpeg
+  overlay_filter: 0.5
+---
+
+<section class="diagonal alternate">
+	<div class="container">
+    <h4>
+      마인드포지의 AI 얼굴인식 솔루션은 저가격, 저전력, 높은 인식 속도, 높은 인식 성능으로  에지 디바이스에 최적화되어 있습니다.
+    </h4>
+    <ul class="image-list">
+      <li><img src="{{ site.baseurl }}/assets/images/face-recognition-on-edge-device.png"></li>
+    </ul>
+	</div>
+</section>
+
+<section class="diagonal alternate">
+	<div class="container halves aligned-top">
+    <div>
+      <h4>Low Cost</h4>
+      <p>
+        ARM 1.4GHz 이상 AP와 소매가 $16 외장 NPU를 이용하여 딥러닝 기반의 얼굴인식 수행 가능 
+      </p>
+    </div>
+    <div>
+      <h4>Low Power Consumption</h4>
+      <p>
+        딥러닝 연산 2.8 TOPs @ 224mW
+      </p>
+    </div>
+    <div>
+      <h4>High Accuracy</h4>
+      <p>
+        99.3% accuracy
+      </p>
+    </div>
+	</div>
+</section>
+
+<section class="diagonal alternate">
+	<div class="container">
+    <h4>High Speed</h4>
+    <p>
+      ARM 1.4GHz 이상 AP와 소매가 $16 외장 NPU를 이용하여 딥러닝 기반의 얼굴인식 수행 가능 
+    </p>
+    <ul class="image-list">
+      <li><img src="{{ site.baseurl }}/assets/images/face-recognition-speed.png"></li>
+    </ul>
+	</div>
+</section>
+
+{% for demo in site.data.demo.links %}
+  {% if demo.name == page.title %}
+    {% assign demo_id = demo.id %}
+  {% endif %}
+{% endfor %}
+
+{% if demo_id %}
+  <section class="diagonal alternate">
+    <div class="container">
+      <h4>Demo video</h4>
+      {% include video.html id=demo_id provider="youtube" %}
+    </div>
+  </section>
+{% endif %}

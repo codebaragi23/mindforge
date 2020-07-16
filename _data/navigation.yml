@@ -1,16 +1,17 @@
-# Navivation
-main:
-  - title: HOME
-    url: /
-  - title: TECHNOLOGY
-    url: /technology/
-  - title: PRODUCTS
-    url: /products/
-  - title: APPLICATIONS
-    url: /applications/
-  - title: RESOURCES
-    url: /resources/
-  - title: COMPANY
-    url: /company/
-  - title: NEWS&EVENTS
-    url: /news-events
+links:
+# - name: Blog
+#   link: /blog/
+- name: Home
+  link: /
+- name: 얼굴인식
+  link: /face-detection/
+- name: 객체검출
+  link: /object-detection/
+- name: 포즈검출
+  link: /pose-estimation/
+- name: 세그멘테이션
+  link: /segmentaion/
+- name: Company
+  link: /company/
+- name: Contact
+  link: /contact/

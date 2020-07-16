@@ -1,0 +1,43 @@
+---
+layout: page
+title: 객체검출
+permalink: /object-detection/
+---
+
+<section class="diagonal alternate">
+	<div class="container">
+    <h4>
+      마인드포지의 AI 객체검출 솔루션은 주차장의 점유공간을 카메라로 인식하여 주차위치안내시스템에 적용되었습니다.
+    </h4>
+    <ul class="image-list">
+      <li><img src="{{ site.baseurl }}/assets/images/object-detection-on-edge-device.png"></li>
+    </ul>
+  </div>
+</section>
+
+<section class="diagonal alternate">
+  <div class="container">
+    <h4>Processing time</h4>
+    <p>
+      NVIDIA Jetson Nano에서 동작
+    </p>
+    <ul class="image-list">
+      <li><img src="{{ site.baseurl }}/assets/images/object-detection-speed.png"></li>
+    </ul>
+  </div>
+</section>
+
+{% for demo in site.data.demo.links %}
+  {% if demo.name == page.title %}
+    {% assign demo_id = demo.id %}
+  {% endif %}
+{% endfor %}
+
+{% if demo_id %}
+  <section class="diagonal alternate">
+    <div class="container">
+      <h4>Demo video</h4>
+      {% include video.html id=demo_id provider="youtube" %}
+    </div>
+  </section>
+{% endif %}

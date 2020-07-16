@@ -1,0 +1,31 @@
+---
+layout: default
+---
+
+{% if page.header.overlay_filter %}
+  {% capture overlay_filter %}rgba(0, 0, 0, {{ page.header.overlay_filter }}){% endcapture %}
+{% endif %}
+
+{% if page.header.overlay_image contains "://" %}
+  {% capture overlay_img_path %}{{ page.header.overlay_image }}{% endcapture %}
+{% elsif page.header.overlay_image %}
+  {% capture overlay_img_path %}{{ page.header.overlay_image | relative_url }}{% endcapture %}
+{% endif %}
+
+<section class="hero diagonal {% if page.header.overlay_image %}overlay{% endif %}"
+  style="{% if page.header.overlay_image %}background-image: {% if page.header.overlay_filter %}linear-gradient({{ overlay_filter }}, {{ overlay_filter }}), {% endif %}url('{{ overlay_img_path }}'); background-size: cover; background-position: center{% endif %}"
+>
+	<div class="container" {% if page.full_width %}style="max-width: 100%"{% endif %}>
+		{% if page.heading %}
+			<h2>{{ page.heading }}</h2>
+		{% elsif page.title %}
+			<h2>{{ page.title }}</h2>
+		{% endif %}
+		{% if page.subtitle %}
+			<p class="subtext">{{ page.subtitle }}</p>
+		{% endif %}
+	</div>
+</section>
+
+{{ content }}
+

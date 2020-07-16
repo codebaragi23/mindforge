@@ -1,21 +1,20 @@
 ---
-layout: single
-title: Company
+layout: about
+title: Our Company
 permalink: /company/
 ---
 
-## 회사 연혁
 
-![](/assets/images/CI-wide.png){: width="25%" height="25%"}
+## 연혁
 
-> **2019**
+**2019**
 
 - 9월 - 중소벤처기업부 예비 창업자 패키지 선정
 - 10월 - ㈜마인드포지 창업
 - 11월 - 네이버시스템㈜에 딥러닝 기술을 이용한 토지피복지도 분류 SW 수주
 - 12월 - 한양디지텍㈜에 딥러닝 기반 심박이상 인식 SW 납품
 
-> **2020**
+**2020**
 
 - 1월 - 한양디지텍㈜에 의료용 수술 로봇 네이게이션 SW 개발 수주
 - 3월 - 정보통신산업진흥원(NIA) AI 바우처 공급 기업 등록 및 - 선정
