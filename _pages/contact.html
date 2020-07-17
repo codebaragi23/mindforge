@@ -17,39 +17,6 @@ permalink: /contact/
 
 <section class="diagonal tight">
 	<div class="container">
-    <div class="halves aligned-top">
-      <div>
-        <form action="{{ site.baseurl }}/_pages/contact-success/" method="post" class="contact-form">
-          <input type="hidden" name="_to" value={{ site.data.company.contact.mailto }} />
-          <input type="text" name="_gotcha" style="display: none;" />
-    
-          <div class="halves">
-            <div>
-              <label for="name">First Name</label>
-              <input type="text" name="first-name" id="first-name"/>
-            </div>
-    
-            <div>
-              <label for="name">Last Name</label>
-              <input type="text" name="last-name" id="last-name"/>
-            </div>
-          </div>
-    
-          <label for="email">Email Address</label>
-          <input type="email" name="email" id="email" required />
-        </form>
-      </div>
-      <div>
-        <label for="message">Message</label>
-        <textarea name="message" id="message"></textarea>
-      </div>
-    </div>
-    <input type="submit" value="Send Message" />
-	</div>
-</section>
-
-<section class="diagonal tight">
-	<div class="container">
     <h4>Address</h4>
     <address><a target="_blank" href="https://www.google.com/maps/place/{{ page.map.address | url_encode }}">{{ site.data.company.address }}</a></address>
 	</div>
