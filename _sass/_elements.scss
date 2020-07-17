@@ -47,6 +47,11 @@ h4 {
 	margin: 0 0 10px 0;
 }
 
+h5 {
+	font-size: 1.3rem;
+	margin: 0 0 5px 0;
+}
+
 h1, h2, h3, h4, h5, h6 {
   font-family: $header-font-family;
   font-weight: bold;
@@ -57,9 +62,14 @@ p, address, ul, ol, pre {
 }
 
 p, address, ul, ol {
-	font-size: 1.38rem;
+	font-size: 1.12rem;
 	color: #555;
-	font-weight: 300;
+  font-weight: 300;
+  line-height: 2;
+}
+
+p {
+  white-space: pre-wrap;
 }
 
 pre {

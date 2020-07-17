@@ -87,32 +87,28 @@ section {
 	&.hero {
     color: #ffffff;
     background: #222 url($pattern);
-		text-align: left;
+		text-align: center;
 		margin-top: -100px;
 		padding-top: 250px;
-
-		h2, p {
-			max-width: 90%;
-		}
 
 		h2 {
 			font-size: 3.5rem;
 		}
 
 		p {
-			font-size: 1.8rem;
+			font-size: 1.5rem;
 			color: #fff;
 		}
 
 		a:not(.button) {
-			color: #ffffff;
+			color: #fff;
 			font-style: italic;
 		}
 	}
 
 	&.alternate {
     &:nth-child(odd) {
-      background: $white;
+      background: white;
     }
     
     &:nth-child(even) {
@@ -124,6 +120,13 @@ section {
 .overlay {
   position: relative;
   z-index: 0;
+  h1, h2, h3, h4, h5 {
+    color: whitesmoke;
+  }
+  p {
+    color: lightgray;
+  }
+
   &:after {
     content : "";
     display: block;
@@ -186,6 +189,14 @@ section {
 
 .aligned-top {
 	align-items: flex-start;
+}
+
+.text-center {
+	text-align: center;
+}
+
+.text-right {
+	text-align: right;
 }
 
 .image-grid {

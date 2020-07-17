@@ -9,8 +9,8 @@ links:
   link: /object-detection/
 - name: 포즈검출
   link: /pose-estimation/
-- name: 세그멘테이션
-  link: /segmentaion/
+- name: GeoAI
+  link: /geo-ai/
 - name: Company
   link: /company/
 - name: Contact

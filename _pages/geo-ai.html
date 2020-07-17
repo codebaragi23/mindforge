@@ -1,0 +1,48 @@
+---
+layout: page
+title: GeoAI
+permalink: /geo-ai/
+
+header:
+  overlay_color: "#FFA715"
+---
+
+<section class="diagonal alternate overlay text-right"  style="
+  background-image: url(https://image.freepik.com/free-photo/aerial-view-small-village-country-roadside_1150-2364.jpg);
+  background-size: cover; background-position: center;">
+  <div class="container">
+    <h3>GeoAI는</h3>
+    <p>공간정보과학(Geospatial Science; Spatial Data Science)과 인공지능(Artificial Intelligence)의 합성어로 <br>공간 빅데이터로부터 유의미한 정보를 도출하기 위해 <br>인공지능 기술과 고성능 컴퓨터를 활용하는 분야입니다.</p>
+  </div>
+</section>
+
+
+<section class="diagonal alternate text-center">
+	<div class="container">
+    <h4>마인드포지의 GeoAI 솔루션은</h4>
+    <p>위성 영상에 적용되어 토지를 분류합니다.</p>
+  </div>
+</section>
+
+<section class="diagonal alternate">
+	<div class="container">
+    <ul class="image-list">
+      <li><img src="{{ site.baseurl }}/assets/images/semantic-segmentation-process.png"></li>
+    </ul>
+  </div>
+</section>
+
+{% for demo in site.data.demo.links %}
+  {% if demo.name == page.title %}
+    {% assign demo_id = demo.id %}
+  {% endif %}
+{% endfor %}
+
+{% if demo_id %}
+  <section class="diagonal alternate text-center">
+    <div class="container">
+      <h4>Demo video</h4>
+      {% include video.html id=demo_id provider="youtube" %}
+    </div>
+  </section>
+{% endif %}

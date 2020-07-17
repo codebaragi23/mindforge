@@ -28,10 +28,8 @@ author:
 timezone: Asia/Seoul # https://en.wikipedia.org/wiki/List_of_tz_database_time_zones
 
 collections:
-  #staff_members:
-    #output: false
-  clients:
-    output: true
+  # members:
+  #   output: false
 
 paginate: 10
 paginate_path: "/blog/:num/"

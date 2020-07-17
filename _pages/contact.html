@@ -1,21 +1,17 @@
 ---
 title: Contact
 map:
-  latitude: 37.4870644
-  longitude: 126.8839396
-  address: "서울특별시 구로구 구로3동 디지털로33길 대륭포스트타워7차"
-  zoom: 14
+  latitude: 37.4874969
+  longitude: 126.892793
+  address: "서울특별시 구로구 구로3동 170-10"
+  zoom: 16
 permalink: /contact/
 ---
 
 <section class="diagonal tight">
 	<div class="container">
     <h4>Contact Us</h4>
-    <p>
-      궁금하신점은 아래의 메일로 문의주시면 빠른시일내에 답변드리겠습니다. <br>
-      +82-70-4082-2082 <br>
-      contact@mindforge.kr
-    </p>
+    <p>궁금하신점은 아래의 메일로 문의주시면 빠른시일내에 답변드리겠습니다. <br>+82-70-4082-2082 <br>contact@mindforge.kr</p>
 	</div>
 </section>
 
@@ -55,7 +51,7 @@ permalink: /contact/
 <section class="diagonal tight">
 	<div class="container">
     <h4>Address</h4>
-    <address><a target="_blank" href="https://www.google.com/maps/place/{{ page.map.address | url_encode }}">{{ page.map.address | replace: ", ", ", <br>" }}</a></address>
+    <address><a target="_blank" href="https://www.google.com/maps/place/{{ page.map.address | url_encode }}">{{ site.data.company.address }}</a></address>
 	</div>
 </section>
 
