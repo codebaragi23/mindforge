@@ -123,7 +123,7 @@ section {
   h1, h2, h3, h4, h5 {
     color: whitesmoke;
   }
-  p {
+  p, a {
     color: lightgray;
   }
 
@@ -141,6 +141,25 @@ section {
   }
 }
 
+.overlay, .hero {
+  .button {
+    border-color: transparent;
+    background: #fff;
+    color: #373842;
+    &:hover {
+      background: rgba(255, 255, 255, 0.3);
+      color: #fff;
+    }
+  
+    &:active {
+      opacity: 1;
+      background: rgba(255, 255, 255, 0.1);
+      color: #fff;
+      transform: translateY(1px);
+    }
+  }
+}
+
 .button {
 	padding: 13px 38px;
 	border-radius: 3px;
@@ -149,13 +168,16 @@ section {
 	text-decoration: none;
 	cursor: pointer;
 	margin: 20px 0 0 0;
-  border: 1px solid rgba(61,61,61,.86);;
+  border: 2px solid rgba(61,61,61,.86);;
 	background: #fff;
-	text-decoration: none !important;
+  text-decoration: none !important;
+  font-weight: 600;
+  line-height: 1;
 
 	&:hover {
-		background: rgba(255, 255, 255, 0.3);
+		background: rgba(0, 0, 0, 0.3);
 		color: #fff;
+    border-color: transparent;
 	}
 
 	&:active {

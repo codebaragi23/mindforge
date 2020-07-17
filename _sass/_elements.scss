@@ -61,7 +61,7 @@ p, address, ul, ol, pre {
 	margin: 0 0 20px 0;
 }
 
-p, address, ul, ol {
+p, a, address, ul, ol {
 	font-size: 1.12rem;
 	color: #555;
   font-weight: 300;
@@ -82,4 +82,8 @@ pre {
 *::before,
 *::after {
   box-sizing: inherit;
+}
+
+span, aside {
+  position: relative;
 }

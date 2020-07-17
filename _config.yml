@@ -1,4 +1,4 @@
-title: Mind Forge
+title: (주)마인드포지 \| Mind Forge
 
 baseurl: 
 url: https://mindforge.kr
@@ -8,7 +8,7 @@ google_maps_javascript_api_key:
 disqus_shortname:
 
 # Default description in social shares for the jekyll-seo-tag gem
-description: Mind Forge 웹사이트 입니다.
+#description: Mind Forge 웹사이트 입니다.
 comp_name: Mind Forge
 comp_logo-wide: logo-wide.png
 comp_logo-long: logo-long.png
@@ -19,13 +19,13 @@ author:
   email:
   twitter: # twitter username without the @ symbol
 
-# Social details for the jekyll-seo-tag gem
+# # Social details for the jekyll-seo-tag gem
 # social:
-#   name: Urban Template
+#   name: 
 #   links:
-#     - https://github.com/CloudCannon/urban-jekyll-template
+#     - https://github.com/
 
-timezone: Asia/Seoul # https://en.wikipedia.org/wiki/List_of_tz_database_time_zones
+timezone: Asia/Seoul
 
 collections:
   # members:
@@ -51,9 +51,6 @@ exclude:
   - README.md
   - LICENCE
 
-include: 
-  - _pages
-
 defaults:
   - scope:
       path: ""
@@ -66,7 +63,7 @@ defaults:
           height: 2000
   - scope:
       path: ""
-      type: "staff_members"
+      type: members"
     values:
       _options:
         image_path:
@@ -82,6 +79,11 @@ defaults:
       type: "pages"
     values:
       layout: "default"
+
+# -----------
+# Reading Files
+include:
+  - _pages
 
 # -----------
 # CloudCannon
