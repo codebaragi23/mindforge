@@ -1,6 +1,22 @@
 html {
-	background: $html-background-color;
+  /* apply a natural box layout model to all elements */
+  box-sizing: border-box;
+  background: $html-background-color;
+  font-size: 12px;
+
+  @include breakpoint($medium) {
+    font-size: 14px;
+  }
+
+  @include breakpoint($large) {
+    font-size: 16px;
+  }
+
+
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
 }
+  
 
 html, body {
 	margin: 0;
@@ -59,6 +75,7 @@ h1, h2, h3, h4, h5, h6 {
 
 p, address, ul, ol, pre {
 	margin: 0 0 20px 0;
+  word-wrap: break-word;
 }
 
 p, a, address, ul, ol {

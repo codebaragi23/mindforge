@@ -5,10 +5,24 @@ permalink: /
 
 <section class="hero diagonal">
 	<div class="container">
-		<h2>AI 바우처 공급기업</h2>
-    <p class="subtext editable">AI 활용ㆍ확산 촉진을 위하여 AI솔루션 수요기업에게 바우처를 발급하고, <br>수요기업은 바우처를 활용하여 공급기업의 원하는 AI솔루션을 활용할 수 있는<br> 정부지원 사업입니다</p>
-		<a class="button alt" href="http://www.bizinfo.go.kr/see/seea/selectSEEA140Detail.do?menuId=80001001001&pblancId=PBLN_000000000051348">AI 바우처 지원사업</a>
-	</div>
+		<h2>Edge Device AI 솔루션<br> 전문기업</h2>
+    <p class="subtext editable">Edge Device에서 실시간 데이터 처리를 위한<br> AI 솔루션 개발을 전문으로 하는 기업입니다</p>
+  </div>
+</section>
+
+<section class="diagonal alternate">
+	<div class="container halves">
+    <div class="container">
+      <h2>AI 바우처 공급기업</h2>
+      <p class="subtext editable">AI 활용ㆍ확산 촉진을 위하여 AI솔루션 수요기업에게 바우처를 발급하고, <br>수요기업은 바우처를 활용하여 공급기업의 원하는 AI솔루션을 활용할 수 있는<br> 정부지원 사업입니다</p>
+      <a class="button alt" href="http://www.bizinfo.go.kr/see/seea/selectSEEA140Detail.do?menuId=80001001001&pblancId=PBLN_000000000051348">AI 바우처 지원사업</a>
+    </div>
+    <div>
+      <ul class="image-list">
+        <li><img src="{{ site.baseurl }}/assets/images/ai_voucher.png" width="400"></li>
+      </ul>
+    </div>
+  </div>
 </section>
 
 <section class="diagonal alternate">
@@ -84,8 +98,10 @@ permalink: /
 		</div>
 		<div>
 			<ul class="image-grid">
-				{% for demo in site.data.demo.links limit: 4 %}
-					<li><a href="https://youtu.be/{{ demo.id }}"><img src="https://img.youtube.com/vi/{{ demo.id }}/0.jpg"></a></li>
+        {% for demo in site.data.demo.links limit: 4 %}
+        <li>
+          {% include video.html id=demo.id provider="youtube" %}
+        </li>
 				{% endfor %}
 			</ul>
 		</div>
