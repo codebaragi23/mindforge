@@ -16,6 +16,15 @@
   ul {
     margin-top: 40px;
   }
+
+  .text-large {
+    font-size: 1.4rem;
+  }
+
+  .text-aligned-left {
+    text-align: left;
+    padding-left: 10%;
+  }
 }
 
 header {
@@ -89,7 +98,7 @@ section {
     background: #222 url($pattern);
 		text-align: center;
 		margin-top: -100px;
-		padding-top: 250px;
+		padding-top: 300px;
 
 		h2 {
 			font-size: 3.5rem;
