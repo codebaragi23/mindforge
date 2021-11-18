@@ -35,7 +35,7 @@
     $( "#dialog" ).dialog(
       {
         autoOpen : true,
-        width : window.innerWidth*0.7
+        width : Math.min(866, window.innerWidth*0.7)
       }
     );
   } );
