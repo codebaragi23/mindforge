@@ -3,6 +3,8 @@ links:
 #   link: /blog/
 - name: Home
   link: /
+- name: About Us
+  link: /about-us/
 - name: 얼굴인식
   link: /face-recognition/
 - name: 객체검출
@@ -11,7 +13,5 @@ links:
   link: /pose-estimation/
 - name: GeoAI
   link: /geo-ai/
-- name: Company
-  link: /company/
-- name: Contact
-  link: /contact/
+- name: Contact US
+  link: /contact-us/

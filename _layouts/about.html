@@ -15,20 +15,20 @@ layout: default
 	</div>
 </section>
 
-<section class="diagonal">
-	<div class="container">
+<section class="diagonal alternate">
+	<div class="container history">
     {{ content }}
-	</div>
+  </div>
 </section>
 
-
 {% if site.members %}
-<section class="diagonal patterned">
+<section class="diagonal alternate">
 	<div class="container">
-	    <p class="editor-link" style="text-align: center;"><a href="cloudcannon:collections/_members/" class="btn"><strong>&#9998;</strong>Manage Staff members</a></p>
+    <h3> Members </h3>
+	  <p class="editor-link" style="text-align: center;"><a href="cloudcannon:collections/_members/" class="btn"><strong>&#9998;</strong>Manage Staff members</a></p>
 		<ul class="image-grid">
 			{% for member in site.members %}
-				<li>{% include staff-member.html member=member %}</li>
+				<li class="square">{% include staff-member.html member=member %}</li>
 			{% endfor %}
 		</ul>
 </div>

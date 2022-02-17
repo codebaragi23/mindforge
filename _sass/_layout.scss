@@ -285,13 +285,25 @@ canvas {
     }
   }
 
+  .square {
+    width: 230px;
+    flex: 0 0 auto;
+    margin: 10px;
+    border-radius: 20px;
+    border: 0;
+    background: rgb(244, 244, 244);
+  }
+
   .square-image {
-    height: 320px;
+    height: 230px;
+    width: 100%;
+    display: block;
+    margin: auto;
 
     img {
-      min-height: 100%;
-      width: 100%;
-      position: absolute;
+      height: 230px;
+      min-width: 10%;
+      position: relative;
       left: 50%;
       top: 50%;
       transform: translateX(-50%) translateY(-50%);
@@ -300,22 +312,31 @@ canvas {
 
   .details {
     line-height: 1.2;
-    position: absolute;
+    height: 150px;
+    position: relative;
     bottom: 0;
     left: 0;
     right: 0;
-    background: rgba(0, 0, 0, 0.5);
+    background: lightgray;
+    color: $brand-color;
     padding: 20px;
+    font-size: 0.8rem;
+    margin-bottom: 5px;
   }
 
   .name {
+    font-weight: bold;
     font-size: 1.3rem;
-    color: $brand-color;
+    margin-bottom: 10px;
   }
 
   .position {
-    margin-top: 5px;
-    color: #fff;
+    font-size: 0.8rem;
+    margin-bottom: 5px;
+  }
+
+  .description {
+    font-size: 0.6rem;
   }
 
   .filler {
@@ -355,4 +376,17 @@ iframe {
     width: 100%;
     height: 100%;
   }
+}
+
+.history {
+  p {
+    font-size: 0.95rem;
+  } 
+}
+
+blockquote {
+  padding: 10px 20px;
+  margin: 0 0 20px;
+  font-size: 17.5px;
+  border-left: 5px solid #eee;
 }

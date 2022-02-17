@@ -1,38 +1,40 @@
 <footer class="diagonal">
   <div class="container grid-xl footer-contents mb-0">
-    <p class="editor-link"><a href="cloudcannon:collections/_data/footer.yml" class="btn"><strong>&#9998;</strong> Update Footer Sections</a></p>
+    <p class="editor-link"><a href="cloudcannon:collections/_data/footer.yml" class="btn"><strong>&#9998;</strong>
+        Update Footer Sections</a></p>
 
     <div class="footer-rows">
       <div class="social">
         {% for link in site.data.social.links %}
-          <li>
-            <a {% if link.new_window %}target="_blank"{% endif %} href="{% include relative-src.html src=link.link %}" {% if link.social_icon %}class="{{ link.social_icon | slugify }}-icon"{% endif %}>
-              {% if link.social_icon %}
-                {% include social-icon.html icon=link.social_icon %}
-              {% endif %}
-            </a>
-          </li>
+        <li>
+          <a {% if link.new_window %}target="_blank" {% endif %} href="{% include relative-src.html src=link.link %}" {%
+            if link.social_icon %}class="{{ link.social_icon | slugify }}-icon" {% endif %}>
+            {% if link.social_icon %}
+            {% include social-icon.html icon=link.social_icon %}
+            {% endif %}
+          </a>
+        </li>
         {% endfor %}
       </div>
 
       <div class="row">
+        {% if site.data.company.address %}
         <div class="col-xs-12 col-md-8">
-          {% if site.data.company.address %}
-            <h4>Address</h4>
-            <p>{{ site.data.company.address }}</p>
-          {% endif %}
+          <h4>Address</h4>
+          <p>{{ site.data.company.address }}</p>
         </div>
+        {% endif %}
+        {% if site.data.company.contact %}
         <div class="col-xs-12 col-md-4">
-          {% if site.data.company.contact %}
-            <h4>Contact</h4>
-            {% if site.data.company.contact.tel %}
-              <p>{{ site.data.company.contact.tel }}</p><br>
-            {% endif %}
-            {% if site.data.company.contact.mailto %}
-              <a href="mailto:{{ site.data.company.contact.mailto }}">{{ site.data.company.contact.mailto }}</a><br>
-            {% endif %}
+          <h4>Contact</h4>
+          {% if site.data.company.contact.tel %}
+          <p>{{ site.data.company.contact.tel }}</p><br>
+          {% endif %}
+          {% if site.data.company.contact.mailto %}
+          <a href="mailto:{{ site.data.company.contact.mailto }}">{{ site.data.company.contact.mailto }}</a><br>
           {% endif %}
         </div>
+        {% endif %}
       </div>
 
       <div class="company">
