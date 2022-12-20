@@ -2,6 +2,7 @@ title: (주)마인드포지 \| Mind Forge
 
 baseurl: 
 url: https://mindforge.kr
+#url: http://mindforge.ai.s3-website-us-east-1.amazonaws.com
 
 google_analytics_key:
 google_maps_javascript_api_key:
