@@ -318,7 +318,7 @@ canvas {
     border: 0;
     background: rgb(255, 255, 255);
     &.shadow {
-      box-shadow: 0 5px 15px 0 rgb(12 37 75 / 15%)
+      box-shadow: 0 5px 15px 0 rgba(12, 37, 75, 0.15)
     }
 
     @media #{$mid-point} {
