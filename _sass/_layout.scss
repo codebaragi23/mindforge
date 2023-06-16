@@ -8,11 +8,11 @@
 }
 
 .text-container {
-  max-width: 1000px;
+  max-width: $max-width;
 }
 
 .container {
-  max-width: 1000px;
+  max-width: $max-width;
 
   ul {
     margin-top: 40px;
@@ -35,6 +35,7 @@ header {
   top: 0;
   left: 0;
   width: 100%;
+  z-index: 10;
 
   a {
     color: #fff;
@@ -49,6 +50,7 @@ header {
 
   .company-name {
     font-size: 1.7em;
+    height: 1px;
   }
 }
 
@@ -94,12 +96,34 @@ section {
     }
   }
 
+  &.header {
+    background: #222 url($pattern);
+  }
+
+  &.alternate {
+    h1 {
+      font-size: 5rem;
+    }
+  }
+
   &.hero {
     color: #ffffff;
     background: #222 url($pattern);
     text-align: center;
-    margin-top: -100px;
-    padding-top: 300px;
+    min-height: 500px;
+
+    @media #{$mid-point} {
+      height: 100vw;
+      min-height: 500px;
+      max-height: 800px;
+    }
+
+    div.vcenter {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
 
     h2 {
       font-size: 3.5rem;
@@ -251,12 +275,12 @@ canvas {
 .image-grid {
   padding: 0;
   list-style: none;
-  display: flex;
+  display: inline-block;
   flex-flow: wrap;
   text-align: center;
-  margin: 0 -20px;
 
   li {
+    display: inline-block;
     padding: 0;
     box-sizing: border-box;
     width: 100%;
@@ -284,59 +308,91 @@ canvas {
       opacity: 0.9;
     }
   }
-
-  .square {
-    width: 230px;
+  
+  .rectangle, .square {
+    height: 380px;
+    width: 100%;
+    margin: 0;
     flex: 0 0 auto;
-    margin: 10px;
     border-radius: 20px;
     border: 0;
-    background: rgb(244, 244, 244);
-  }
+    background: rgb(255, 255, 255);
+    &.shadow {
+      box-shadow: 0 5px 15px 0 rgb(12 37 75 / 15%)
+    }
 
-  .square-image {
-    height: 230px;
-    width: 100%;
-    display: block;
-    margin: auto;
+    @media #{$mid-point} {
+      margin-bottom: 40px;
+      &:nth-of-type(n+2) {
+        margin-left: 40px;
+      }
+    }
 
-    img {
-      height: 230px;
-      min-width: 10%;
+    .image-box {
+      height: 60%;
+      width: 100%;
+      display: block;
+      margin: auto;
+  
+      img {
+        height: 100%;
+        min-width: 10%;
+        position: relative;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+      }
+    }
+
+    .text-box {
+      line-height: 1.2;
+      height: 40%;
       position: relative;
-      left: 50%;
-      top: 50%;
-      transform: translateX(-50%) translateY(-50%);
+      bottom: 0;
+      left: 0;
+      right: 0;
+      color: $brand-color;
+      padding: 20px;
+      font-size: 0.8rem;
+      &.highlight {
+        background: lightgray;
+      }
     }
   }
 
-  .details {
-    line-height: 1.2;
-    height: 150px;
-    position: relative;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    background: lightgray;
-    color: $brand-color;
-    padding: 20px;
-    font-size: 0.8rem;
-    margin-bottom: 5px;
+  .square {
+    width: 230px;
+  }
+  .rectangle {
+    @media #{$mid-point} {
+      width: 400px;
+
+      &.wide {
+        width: 500px;
+        height: 400px
+      }
+      &.long {
+        width: 200px;
+        height: 690px;
+  
+        .image-box {
+          height: 460px;
+        }
+      }
+    }
   }
 
   .name {
     font-weight: bold;
-    font-size: 1.3rem;
+    font-size: 1.4rem;
     margin-bottom: 10px;
   }
-
   .position {
-    font-size: 1.0rem;
+    font-size: 1rem;
     margin-bottom: 5px;
   }
-
   .description {
-    font-size: 0.6rem;
+    font-size: 0.9em;
   }
 
   .filler {
@@ -344,8 +400,7 @@ canvas {
   }
 }
 
-.image-list,
-.image-list li {
+.image-list {
   list-style: none;
   margin: 0;
   padding: 0;

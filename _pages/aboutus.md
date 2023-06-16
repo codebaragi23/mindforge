@@ -1,5 +1,5 @@
 ---
-layout: about
+layout: aboutus
 title: About us
 permalink: /about-us/
 ---
@@ -42,3 +42,4 @@ permalink: /about-us/
 >1월 - **내일체움공제** 가입
 3월 - 중소벤처기업부 **TIPS** 선정 (**후방 자동 긴급제동을 위한 광각카메라 기반 AI 인식 솔루션** 개발)
 4월 - NIPA AI 바우처 지원 (**On premise 중앙 server 방식의 다기종 다채널 인공지능 AOI 검수제어 system**)
+

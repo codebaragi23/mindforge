@@ -6,3 +6,6 @@ _site/
 s3_website.yml
 
 _tmp
+
+Gemfile
+Gemfile.lock

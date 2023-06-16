@@ -1,16 +1,82 @@
 <nav>
-	<a class="nav-toggle" id="open-nav" href="#">&#9776;</a>
+	<a class="nav-toggle" id="open-nav" href="#"></a>
 	<ul>
 		{% for link in site.data.navigation.links %}
-			{% assign class = "" %}
-			{% if link.highlight %}
-				{% assign class = class | append: " highlight" %}
-			{% endif %}
-
-			{% if link.link == page.url %}
-				{% assign class = class | append: " active" %}
-			{% endif %}
-			<li><a href="{{ site.url }}{{ site.baseurl }}{{ link.link }}" class="{{ class }}" {% if link.new_window %}target="_blank"{% endif %}>{{ link.name }}</a></li>
+      {% assign title = link.title %}
+      {% assign url = site.url | append: site.baseurl | append: link.url %}
+      {% assign class = "item" %}
+      {% if link.children %}
+        {% assign class = "dropdown" %}
+        {% assign url = "javascript:void(0)" %}
+        {% for child in link.children %}
+          {% if child.url == page.url %}
+            {% assign class = class | append: " active" %}
+          {% endif %}    
+        {% endfor %}
+      {% elsif link.url == page.url %}
+        {% assign class = class | append: " active" %}
+      {% endif %}
+      
+      {% if link.highlight %}
+        {% assign class = class | append: " highlight" %}
+      {% endif %}
+      
+			<li>
+        <a href="{{ url }}" class="{{ class }}" {% if link.new_window %}target="_blank"{% endif %}>{{ link.title }}</a>
+        {% if link.children %}
+          <div class="item child">
+            <ul>
+              {% for child in link.children %}
+                {% assign class = "item" %}
+                {% assign url = site.url | append: site.baseurl | append: child.url %}
+                {% if child.highlight %}
+                  {% assign class = class | append: " highlight" %}
+                {% endif %}
+                {% if child.url == page.url %}
+                  {% assign class = class | append: " active" %}
+                {% endif %}
+                  <li><a href="{{ url }}" class="{{ class }}" {% if child.new_window %}target="_blank"{% endif %}>{{ child.title }}</a></li>
+              {% endfor %}
+            </ul>
+          </div>
+        {% endif %}
+      </li>
 		{% endfor %}
 	</ul>
 </nav>
+
+<script>
+  // when clicking on a dropdown navbar menu, show the child links
+  $(document).ready(function() {
+    if (document.cookie.split(';')[0] == "active")
+      $("header").addClass("active");
+  });
+  
+  $("header").on("mouseover", function() {
+    $(this).addClass("active");
+    document.cookie = "active"
+  });
+  var removeActive = function() {
+    $("header").removeClass("active");
+    document.cookie = ""
+  }
+
+  $("header").on("mouseout", function() {
+    removeActive();
+  });
+  $(window).on("scroll", function() {
+    removeActive();
+  });
+
+  $(window).on("click", function(event) {
+    if (document.querySelector('header').contains(event.target) == false)
+      removeActive();
+  });
+
+  $(".dropdown").on("click", function() {
+    $(this).parent().siblings("li").children().removeClass("active");
+    console.log("dropdown click");
+    $(this).toggleClass("active");
+  });
+  
+</script>

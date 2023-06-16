@@ -1,0 +1,63 @@
+---
+layout: page
+title: 동식물 탐지
+permalink: /florafaunadet/
+
+header:
+  overlay_image: /assets/images/florafaunadet/florafaunadet-main.jpg
+  overlay_filter: 0.1
+---
+
+<section class="diagonal alternate text-right">
+  <div class="container">
+    <h3>마인드포지의 동식물 탐지 AI 솔루션은</h3>
+    <p>환경영향평가 과정(사업 전), 사업 과정, 사업 후(영향 및 저감방안 모니터링) 등<br>기간 및 목적에 따른 동식물 서식환경 모니터링을 가능하게 합니다</p>
+  </div>
+</section>
+
+<section class="diagonal alternate text-left">
+  <div class="container">
+    <h3>동식물 탐지를 위한 다양한 어플리케이션에 적용 가능합니다</h3>
+    <ul class="image-grid">
+      <li class="rectangle shadow">
+        <div class="image-box">
+          <img src="{{ site.baseurl }}/assets/images/florafaunadet/florafaunadet-1.png">
+        </div>
+        <div class="text-box">
+          <h5>갯벌 게 탐지</h5>
+        </div>
+      </li>
+      <li class="rectangle shadow">
+        <div class="image-box">
+          <img src="{{ site.baseurl }}/assets/images/florafaunadet/florafaunadet-2.png">
+        </div>
+        <div class="text-box">
+          <h5>동물 발자국 검출</h5>
+        </div>
+      </li>
+      <li class="rectangle shadow">
+        <div class="image-box">
+          <img src="{{ site.baseurl }}/assets/images/florafaunadet/florafaunadet-3.png">
+        </div>
+        <div class="text-box">
+          <h5>동물 분변 검출</h5>
+        </div>
+      </li>
+    </ul>
+  </div>
+</section>
+
+{% for demo in site.data.demo.links %}
+{% if demo.name == page.title %}
+{% assign demo_id = demo.id %}
+{% endif %}
+{% endfor %}
+
+{% if demo_id %}
+<section class="diagonal alternate text-center">
+  <div class="container">
+    <h4>Demo video</h4>
+    {% include video.html id=demo_id provider="youtube" %}
+  </div>
+</section>
+{% endif %}

@@ -1,0 +1,77 @@
+---
+layout: page
+title: MonoEye
+permalink: /monoeye/
+
+header:
+  overlay_image: /assets/images/monoeye/monoeye-main.jpg
+  overlay_filter: 0.1
+---
+
+<section class="diagonal alternate text-right">
+  <div class="container">
+    <h3>마인드포지의 MonoEye AI 인식 솔루션은</h3>
+    <p>단일 광각카메라를 이용하여 넓은 범위의<br>충돌 위험 객체 감지 및 주행가능 정보를 획득합니다</p>
+  </div>
+</section>
+
+<section class="diagonal alternate">
+  <div class="container">
+    <div class="image-list">
+      <img src="{{ site.baseurl }}/assets/images/monoeye/monoeye-solution.png">
+    </div>
+  </div>
+</section>
+
+<section class="diagonal alternate text-left">
+  <div class="container">
+    <h3>안전을 위한 다양한 어플리케이션에 적용 가능합니다</h3>
+    <ul class="image-grid">
+      <li class="rectangle shadow">
+        <div class="image-box">
+          <img src="{{ site.baseurl }}/assets/images/monoeye/monoeye-app_emergency_brake.png">
+        </div>
+        <div class="text-box">
+          <p>골목길, 주차장 등과 같은 환경에서<br>후진 중 안전을 위한 차량 후방 긴급 제동</p>
+        </div>
+      </li>
+      <li class="rectangle shadow">
+        <div class="image-box">
+          <img src="{{ site.baseurl }}/assets/images/monoeye/monoeye-app_collision_hazard_detection.png">
+        </div>
+        <div class="text-box">
+          <p>산업현장에서 작업자 안전을 위한 <br>작업자 충돌 위험</p>
+        </div>
+      </li>
+    </ul>
+  </div>
+</section>
+
+<section class="diagonal alternate text-right">
+  <div class="container">
+    <h3>안전을 위한 다양한 전시회</h3>
+    <img src="{{ site.baseurl }}/assets/images/monoeye/monoeye-exhibition.png">
+  </div>
+</section>
+
+<section class="diagonal alternate text-left">
+  <div class="container">
+    <h3>안전신기술공모전 최우수상 수상</h3>
+    <img src="{{ site.baseurl }}/assets/images/monoeye/monoeye-contest.jpg">
+  </div>
+</section>
+
+{% for demo in site.data.demo.links %}
+{% if demo.name == page.title %}
+{% assign demo_id = demo.id %}
+{% endif %}
+{% endfor %}
+
+{% if demo_id %}
+<section class="diagonal alternate text-center">
+  <div class="container">
+    <h4>Demo video</h4>
+    {% include video.html id=demo_id provider="youtube" %}
+  </div>
+</section>
+{% endif %}

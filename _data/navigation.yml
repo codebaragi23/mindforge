@@ -1,17 +1,31 @@
 links:
 # - name: Blog
-#   link: /blog/
-- name: Home
-  link: /
-- name: About Us
-  link: /about-us/
-- name: 얼굴인식
-  link: /face-recognition/
-- name: 객체검출
-  link: /object-detection/
-- name: 포즈검출
-  link: /pose-estimation/
-- name: GeoAI
-  link: /geo-ai/
-- name: Contact US
-  link: /contact-us/
+#   url: /blog/
+- title: 기술
+  children:
+    - title: MonoEye
+      url: /monoeye/
+    - title: 동식물 탐지
+      url: /florafaunadet/
+    - title: 헬스케어
+      url: /healthcare/
+    - title: 얼굴인식
+      url: /facerecog/
+    - title: 객체검출
+      url: /object-detection/
+    - title: 포즈검출
+      url: /pose-estimation/
+    - title: GeoAI
+      url: /geo-ai/
+- title: 제품
+  children:
+  - title: 준비중
+  url: /geo-ai/
+- title: 회사소개
+  children:
+  - title: About us
+    url: /about-us/
+  - title: News
+    url: /news/
+- title: Contact US
+  url: /contact-us/

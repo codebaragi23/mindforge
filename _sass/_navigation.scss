@@ -1,4 +1,4 @@
-.nav-open {
+.nav-open {  
 	header {
 		background: #444;
 		z-index: 10;
@@ -14,17 +14,40 @@
 
 		a {
 			display: block;
+      margin: 0;
+      &.nav-toggle:after {
+        content: "X";
+      }
+
 		}
 
-		@media #{$mid-point} {
-			border: 0;
-			padding: 0 20px;
+    a.dropdown:after {
+      content: "∨";
+      float: right;
+    }
+  
+    a.dropdown.active {
+      &:after {
+        content: "∧";
+      }
+      +div.child {
+        display: block;
+      }
+    }
+  }
+}
 
-			a {
-				display: inline;
-			}
-		}
-	}
+header.active {
+  color: $brand-color;
+  padding-bottom: 20px;
+  display: block;
+
+  @media #{$mid-point} {
+    background: #444;
+    div.child {
+      display: block;
+    }
+  }
 }
 
 nav {
@@ -33,38 +56,38 @@ nav {
 	width: 100%;
 
 	ul {
-		margin: 0;
-		padding: 0;
-	}
-
-	li {
-		display: block;
+    margin-bottom: 20px;
+		padding: 40px 0 0 0;
+    list-style: none;
 	}
 
 	@media #{$mid-point} {
-		text-align: right;
-		position: absolute;
-		top: 0;
-		right: 0;
+		text-align: left;
 		padding: 0 20px;
 
-		li {
-			display: inline-block;
-		}
+    ul {
+      float: right;
+      padding: 0;
+    }
+
+    li {
+      float: left;
+    }
 	}
 
 	a {
-		margin: 0 3px;
+    margin-right: 50px;
 		padding: 20px 10px;
 		color: rgba(255, 255, 255, 0.8);
 		transition: 0.2s ease-in-out;
 		display: none;
-		font-size: 1rem;
+		font-size: 1.2rem;
+		font-weight: 500;
 
 		@media #{$mid-point} {
 			border-bottom: 2px solid rgba(255, 255, 255, 0);
-			display: block;
-			padding: 10px;
+			display: inline-block;
+      padding: 10px;
 		}
 
 		&.nav-toggle {
@@ -74,10 +97,15 @@ nav {
 			top: -22px;
 			font-size: 1.9em;
 			border: 0;
+      margin: 0;
 
 			@media #{$mid-point} {
 				display: none;
 			}
+      
+      &:after {
+        content: "\2630"
+      }
 
 			&:hover {
 				border: 0;
@@ -90,24 +118,64 @@ nav {
 
 		@media #{$mid-point} {
 			border-bottom: 2px solid rgba(255, 255, 255, 0.6);
-			display: block;
+			display:inline;
 			padding: 10px;
 		}
 	}
 
 	@media #{$mid-point} {
-		a.highlight {
-			border: 1px #ccc solid;
-			border-radius: 5px;
+    border: 0;
+    padding: 0 20px;
 
-			&:hover {
-				background: #fff;
-				color: $brand-color;
-			}
+		a {
+      display: inline;
+      &.highlight {
+        border: 1px #ccc solid;
+        border-radius: 5px;
+
+        &:hover {
+          background: #fff;
+          color: $brand-color;
+        }
+      }
 		}
 	}
 
 	a.active {
 		color: #fff;
+    font-weight: bold;
 	}
+
+  a.dropdown:after {
+    content: "";
+  }
+
+  div.child {
+    display: none;
+    padding-left: 20px;
+    @media #{$mid-point} {
+      padding: 0;
+    }
+
+    ul {
+      margin: 0;
+      padding: 0;
+      float: none;
+      a {
+        font-size: 1.0rem;
+		    font-weight: lighter;
+        line-height: 1.7px;
+        margin: 0;
+      }
+
+      a.active {
+        color: #fff;
+        font-weight: bolder;
+      }
+    }
+
+    li {
+      float: none;
+    }
+  }
 }

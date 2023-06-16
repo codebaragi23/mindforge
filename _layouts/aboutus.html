@@ -1,0 +1,22 @@
+---
+layout: post
+---
+<section class="diagonal alternate">
+	<div class="container history">
+    {{ content }}
+  </div>
+</section>
+
+{% if site.members %}
+<section class="diagonal alternate">
+	<div class="container">
+    <h3> Members </h3>
+	  <p class="editor-link text-center"><a href="cloudcannon:collections/_members/" class="btn"><strong>&#9998;</strong>Manage Staff members</a></p>
+		<ul class="image-grid">
+			{% for member in site.members %}
+				<li class="square">{% include staff-member.html member=member %}</li>
+			{% endfor %}
+		</ul>
+</div>
+</section>
+{% endif %}

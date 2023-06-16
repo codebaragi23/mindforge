@@ -24,7 +24,7 @@ author:
 # social:
 #   name: 
 #   links:
-#     - https://github.com/
+#     - https://github.com/CloudCannon/urban-jekyll-template
 
 timezone: Asia/Seoul
 
@@ -60,7 +60,7 @@ defaults:
       layout: "post"
       _options:
         content:
-          width: 960
+          width: 1140
           height: 2000
   - scope:
       path: ""
