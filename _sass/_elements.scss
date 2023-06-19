@@ -76,6 +76,7 @@ h1, h2, h3, h4, h5, h6 {
 p, address, ul, ol, pre {
 	margin: 0 0 20px 0;
   word-wrap: break-word;
+  word-break: keep-all;
 }
 
 p, a, address, ul, ol {
@@ -86,7 +87,9 @@ p, a, address, ul, ol {
 }
 
 p {
-  white-space: pre-wrap;
+  &.pre-wrap{
+    white-space: pre-wrap;
+  }
 }
 
 pre {

@@ -19,22 +19,6 @@ items:
         <p class="subtext editable">Edge Device에서 실시간 데이터 처리를 위한<br> AI 솔루션 개발을 전문으로 하는 기업입니다</p>
       </div>
 
-  - title: news
-    html:
-      <div class="container halves">
-        <div>
-          <img src="/assets/images/posco imp.png" width="80%">
-        </div>
-
-        <div>
-          <h3 class="text-aligned-left">제 21회 POSCO IMP 선정</h3>
-          <p class="subtext text-aligned-left"> 포스코 아이디어파켓플레이스(POSCO IMP)는<br>
-          유망 초기 스타트업의 발굴 및 Value-up을 위한<br>
-          포스코의 기술기반 스타트업 엑셀러레이팅 프로그램입니다.</p>
-        </div>
-      </div>
-      <a class="button alt" href="https://poscoimp.com/ABOUT">관련 링크</a>
-
   - title: paper-publish
     html:
       <div class="container">
@@ -106,9 +90,11 @@ items:
 	<div class="container halves">
 		<div>
 			<div class="image-list">
-        <img src="{{ site.baseurl }}/assets/images/healthcare/healthcare-1.png" height="100">
-        <img src="{{ site.baseurl }}/assets/images/healthcare/healthcare-2.png" height="100">
-        <img src="{{ site.baseurl }}/assets/images/healthcare/healthcare-3.png" height="100">
+        <img src="{{ site.baseurl }}/assets/images/healthcare/healthcare-1.png" height="80">
+        <img src="{{ site.baseurl }}/assets/images/healthcare/healthcare-2.png" height="80">
+      </div>
+			<div class="image-list">
+        <img src="{{ site.baseurl }}/assets/images/healthcare/healthcare-3.png" height="80">
       </div>
 		</div>
 		<div>
@@ -124,7 +110,7 @@ items:
   background-image: url({{ site.baseurl }}/assets/images/objectd/object-detection-parking-lot.png);
   background-size: cover;
   background-position: center;">
-	<div class="container">
+	<div class="container text-center">
     <div>
       <h2>객체검출</h2>
       <h5>마인드포지의 객체검출 솔루션은</h5>
@@ -154,7 +140,7 @@ items:
   background-image: url({{ site.baseurl }}/assets/images/geoai/geoai-main.jpg);
   background-size: cover;
   background-position: center;">
-	<div class="container">
+	<div class="container text-center">
 		<div>
 			<h2>GeoAI</h2>
       <h5>마인드포지의 GeoAI 솔루션은</h5>
@@ -166,13 +152,13 @@ items:
 </section>
 
 <section class="diagonal alternate">
-	<div class="container halves">
+	<div class="container">
 		<div>
 			<h2>마인드포지 AI 솔루션</h2>
 			<p>데모 영상을 살펴보세요.</p>
 		</div>
 		<div>
-			<ul class="image-grid">
+			<ul class="item-grid">
         {% for demo in site.data.demo.links limit: 4 %}
         <li>
           {% include video.html id=demo.id provider="youtube" %}
