@@ -19,7 +19,7 @@ links:
       url: /geo-ai/
 - title: 제품
   children:
-  - title: 카페 맞춤형 AI 생두 분류기(준비중)
+  - title: 카페 맞춤형 AI 생두 분류기
     url: /coffee/
 #  - title: 산업용 MonoEye 카메라(준비중)
 #    url: /monoeye-chdet/

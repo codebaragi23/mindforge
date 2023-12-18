@@ -11,6 +11,13 @@
   max-width: $max-width;
 }
 
+.image-container {
+  max-width: $max-width;
+  align-self: stretch;
+  padding: 0 20px;
+  gap: 40px;
+}
+
 .container {
   max-width: $max-width;
 
@@ -264,6 +271,11 @@ canvas {
   align-items: flex-start;
 }
 
+.aligned-bottom {
+  position: absolute;
+  bottom: 5%;
+}
+
 .text-center {
   text-align: center;
 }
@@ -305,6 +317,7 @@ canvas {
 
     img {
       min-width: 100%;
+      object-fit: contain;
     }
 
     >a:hover {
@@ -352,6 +365,9 @@ canvas {
       color: $brand-color;
       padding: 20px;
       font-size: 0.8rem;
+      span {
+        
+      }
       &.highlight {
         background: lightgray;
       }
