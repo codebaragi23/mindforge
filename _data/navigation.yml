@@ -21,8 +21,8 @@ links:
   children:
   - title: 카페 맞춤형 AI 생두 분류기
     url: /coffee/
-#  - title: 산업용 MonoEye 카메라(준비중)
-#    url: /monoeye-chdet/
+  # - title: 실시간 작업자 충돌위험 감지 단말기
+  #   url: /monoeye-chdet/
   url: /geo-ai/
 - title: 회사소개
   children:
