@@ -1,5 +1,8 @@
 title: (주)마인드포지 \| Mind Forge
 
+host: "0.0.0.0"
+port: 4000
+
 baseurl: 
 url: https://mindforge.kr
 #url: http://mindforge.ai.s3-website-us-east-1.amazonaws.com

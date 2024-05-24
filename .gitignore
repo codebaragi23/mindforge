@@ -9,3 +9,5 @@ _tmp
 
 Gemfile
 Gemfile.lock
+
+docker-compose.yml
