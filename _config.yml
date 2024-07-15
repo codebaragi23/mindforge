@@ -32,8 +32,7 @@ author:
 timezone: Asia/Seoul
 
 collections:
-  members:
-    output: true
+  #members
 
 paginate: 10
 paginate_path: "/blog/:num/"
